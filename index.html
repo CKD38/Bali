@@ -17,7 +17,15 @@
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /* 預設手機版不使用 fixed，避免 iOS 破圖變灰底 */
+            background-attachment: scroll;
+        }
+        /* 電腦版螢幕才啟用固定背景的視差滾動效果 */
+        @media (min-width: 1024px) {
+            .hero-bg {
+                background-attachment: fixed;
+            }
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
